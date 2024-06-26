@@ -1,3 +1,5 @@
+import Azienda.Impiegato;
+import Azienda.Manager;
 import Hotel.Camera;
 import Hotel.Cliente;
 import Hotel.FrontOffice;
@@ -102,6 +104,7 @@ public class App {
         ElencoTelefonicoTest();
         SeggioElettoraleTest();
         HotelTest();
+        AziendaTest();
     }
 
     public static void PrenotazioniTest() throws Exception {
@@ -221,14 +224,36 @@ public class App {
         hotel.aggiungiPrenotazione(cliente2, camera1, "2024-03-22", "2024-03-28");
 
         hotel.stampaPrenotazioni();
-
-        Prenotazione prenotazioneCliente1 = new Prenotazione(camera1, cliente1, "2024-07-01", "2024-07-07");
         
+        hotel.eliminaPrenotazione(cliente2);
+
+        hotel.stampaPrenotazioni();
 
     } catch (Exception e) {
         e.getStackTrace();
     }
 
 
+
+
  }
+
+ public static void AziendaTest(){
+    Impiegato[] impiegati = new Impiegato[3];
+    impiegati[0] = new Impiegato("Salvo", 30000);
+    impiegati[1] = new Impiegato("Gino", 25000);
+    impiegati[2] = new Manager("Peppe", 40000, 5000);
+
+    try {
+        for (Impiegato impiegato : impiegati) {
+            impiegato.aumentaSalario(10);
+        }
+
+        for (Impiegato impiegato : impiegati) {
+            System.out.println(impiegato);
+        }
+    }catch (Exception e) {
+        e.getStackTrace();
+    }
+  }
 }

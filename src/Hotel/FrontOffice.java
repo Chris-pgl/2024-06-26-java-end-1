@@ -53,6 +53,15 @@ public class FrontOffice {
         camereDisponibili.remove(nuovaCamera);
     }
 
+    public void eliminaPrenotazione(Cliente cliente, Prenotazione prenotazioneDaEliminare) throws Exception{
+        List<Prenotazione> prenotazioniCliente = prenotazioni.get(cliente);
+        if(prenotazioniCliente == null || !prenotazioniCliente.contains(prenotazioneDaEliminare)){
+            throw  new Exception("Prenotazione non trobata per il cliente: " + cliente);
+        }
+        prenotazioniCliente.remove(prenotazioneDaEliminare);
+        camereDisponibili.add(prenotazioneDaEliminare.getCamera());
+    }
+
     public void stampaPrenotazioni(){
         for(Map.Entry<Cliente, List<Prenotazione>> entry : prenotazioni.entrySet()){
             Cliente cliente = entry.getKey();
@@ -64,6 +73,17 @@ public class FrontOffice {
         }
     }
 
+    public List<Camera> getCamereDisponibili() {
+        return camereDisponibili;
+    }
+
+    public Map<Cliente, List<Prenotazione>> getPrenotazioni() {
+        return prenotazioni;
+    }
+
+    public void eliminaPrenotazione(Cliente cliente){
+        prenotazioni.remove(cliente);
+    }
    
     
 
