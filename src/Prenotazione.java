@@ -17,33 +17,38 @@ public class Prenotazione {
     }
 
     //prenota posto
-    public boolean prenotaPosto(int posto) {
-        if (posto < 0 || posto >= posti.length && !posti[posto]) {
-            posti[posto] = true;
-            return true;
+    public boolean prenotaPosto(int posto) throws Exception{
+        if (posto < 0 || posto >= posti.length) {
+            throw new IllegalArgumentException("Numero di posto non valido");
         }
-        return false;
+        if (!posti[posto]) {
+            posti[posto] = true;
+            return true; // Prenotazione riuscita
+        } else {
+            return false; // Posto già prenotato
+        }
     }
 
     //annulla prenotazione
-    public boolean annullaPrenotazione(int posto) {
-        if (posto < 0 || posto >= posti.length && posti[posto]) {
-            posti[posto] = false;
-            return true;
+    public boolean annullaPrenotazione(int posto) throws Exception {
+        if (posto >= 0 && posto < posti.length) {
+            if (posti[posto]) {
+                posti[posto] = false;
+                return true; // annullamento riuscito
+            } else {
+                return false; // posto non prenotato
+            }
+        } else {
+            throw new Exception("Posto non valido");
         }
-        return false;
     }
 
-    //verificare se un o piu' posti sono disponibili
-     public boolean verificaDisponibilità(int posto) {
-        return posto >= 0 && posto < posti.length && !posti[posto];
+    //verifica se uno un posto è disponibile
+    public boolean isPostoDisponibile(int posto) throws Exception {
+       if(posto < 0 || posto >= posti.length){
+        throw new Exception("Posto non valido");
+       }
+       return !posti[posto];
     }
-
-    public boolean[] getPosti() {
-        return posti;
-    }
-
-
-
 
 }

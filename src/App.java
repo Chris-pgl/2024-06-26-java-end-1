@@ -1,15 +1,3 @@
-public class App {
-    public static void main(String[] args) throws Exception {
-
-        test();
-    }
-
-    public static void test() {
-
-        System.out.println("Hello, World!");
-    }
-}
-
 /**
  * TODO:
  * 
@@ -55,3 +43,21 @@ public class App {
  * telefono non validi.
  * 
  */
+
+ public class App {
+    public static void main(String[] args) throws Exception {
+
+        PrenotazioniTest();
+    }
+
+    public static void PrenotazioniTest() throws Exception {
+
+        Prenotazione prenotazione = new Prenotazione(10);
+        System.out.println("Prenotazione posto 5: " + prenotazione.prenotaPosto(5));
+        System.out.println("Verifica disponibilità posto 5: " + prenotazione.isPostoDisponibile(5));
+        System.out.println("Annulla prenotazione posto 5: " + prenotazione.annullaPrenotazione(5));
+        System.out.println("Verifica disponibilità posto 5: " + prenotazione.isPostoDisponibile(5));
+
+        
+    }
+}
