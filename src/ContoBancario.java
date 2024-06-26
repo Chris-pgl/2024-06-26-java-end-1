@@ -26,7 +26,7 @@ public class ContoBancario {
     }
 
     //metodo per prelevare denaro
-    public void preleva(double importo){
+    public void preleva(double importo) throws Exception{
         if(importo < 0){
             throw new IllegalArgumentException("Importo non può essere negativo");
         }

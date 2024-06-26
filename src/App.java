@@ -50,6 +50,7 @@
         PrenotazioniTest();
         StudenteTest();
         ContoBancarioTest();
+        ElencoTelefonicoTest();
     }
 
     public static void PrenotazioniTest() throws Exception {
@@ -75,13 +76,50 @@
     }
 
     public static void ContoBancarioTest()throws Exception{
+  
         ContoBancario contoBancario = new ContoBancario(1000);
         System.out.println("Aperto un nuovo conto! saldo: " + contoBancario.getSaldo());
         contoBancario.deposita(100);
         System.out.println("Saldo dopo il deposito 100: " + contoBancario.getSaldo());
         contoBancario.preleva(1000);
         System.out.println("Prelevo 1000, saldo restante: " +contoBancario.getSaldo());
+    try{ 
         contoBancario.preleva(200);
+    }catch(Exception e){
+        System.err.println("Errore durante il prelievo");
+    }
+    }
 
+    public static void ElencoTelefonicoTest() throws Exception{
+        
+
+        try{
+        
+            ElencoTelefonico elenco = new ElencoTelefonico();
+            Contatto contattoG = new Contatto("Gino Lino", "1234567890");
+            Contatto contattoE = new Contatto("Elen", "2345781249");
+            Contatto ContattoM = new Contatto("Mario", "1246890348");
+       
+
+            elenco.addContatto(contattoG);
+            elenco.addContatto(contattoE);
+            elenco.addContatto(ContattoM);
+
+            System.out.println("Contatti: ");
+            elenco.stampaRubrica();
+
+            Contatto cerca = elenco.cercaContatto("Mario");
+            Contatto cercaf = elenco.cercaContatto("Luigi");
+            System.out.println("Contatto cercato: " + cerca);
+            System.out.println("Contatto cercato: " + cercaf); 
+
+            System.out.println("Rimozione dall'elento Mario");
+            elenco.removeContatto("Mario");
+            elenco.stampaRubrica();
+            
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
