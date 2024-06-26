@@ -51,4 +51,20 @@ public class Prenotazione {
        return !posti[posto];
     }
 
+     public boolean postiDisponibili(int[] numeriPosti) {
+        try {
+            for (int posto : numeriPosti) {
+                if (posto < 0 || posto >= posti.length) {
+                    throw new IllegalArgumentException("Numero di posto non valido: " + posto);
+                }
+                if (posti[posto]) {
+                    return false; // Uno dei posti non è disponibile
+                }
+            }
+            return true; // Tutti i posti sono disponibili
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+
 }

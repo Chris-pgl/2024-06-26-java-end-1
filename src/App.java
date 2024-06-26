@@ -48,16 +48,28 @@
     public static void main(String[] args) throws Exception {
 
         PrenotazioniTest();
+        StudenteTest();
     }
 
     public static void PrenotazioniTest() throws Exception {
 
         Prenotazione prenotazione = new Prenotazione(10);
+        int[] postiDaVerificare = { 2, 5, 6, 7, 8};
+
+        System.out.println("Prenotazione posto 8: " + prenotazione.prenotaPosto(8));
         System.out.println("Prenotazione posto 5: " + prenotazione.prenotaPosto(5));
         System.out.println("Verifica disponibilità posto 5: " + prenotazione.isPostoDisponibile(5));
         System.out.println("Annulla prenotazione posto 5: " + prenotazione.annullaPrenotazione(5));
         System.out.println("Verifica disponibilità posto 5: " + prenotazione.isPostoDisponibile(5));
+        System.out.println("Verifica più posti disponibili: " + prenotazione.postiDisponibili(postiDaVerificare));
+    }
 
-        
+    public static void StudenteTest(){
+        Studente studente = new Studente("Mario", "1234");
+        studente.addVoto(9);
+        studente.addVoto(7);
+        studente.addVoto(5);
+        studente.addVoto(11); //stampa errore
+        studente.stampaStudente();
     }
 }
