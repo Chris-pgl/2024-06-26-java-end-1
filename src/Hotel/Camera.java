@@ -9,6 +9,7 @@ package Hotel;
 */
 public class Camera {
     private int numeroCamere;
+    String tipo;
 
     public int getNumeroCamere() {
         return numeroCamere;
@@ -18,8 +19,9 @@ public class Camera {
         this.numeroCamere = numeroCamere;
     }
 
-    public Camera(int numeroCamere) {
+    public Camera(int numeroCamere, String tipo) {
         this.numeroCamere = numeroCamere;
+        this.tipo = tipo;
     }
 
     @Override

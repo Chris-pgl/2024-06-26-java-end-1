@@ -1,3 +1,6 @@
+import Hotel.Camera;
+import Hotel.Cliente;
+import Hotel.FrontOffice;
 import SeggioElettorale.Candidato;
 import SeggioElettorale.Elettore;
 import SeggioElettorale.SeggioElettorale;
@@ -98,6 +101,7 @@ public class App {
         ContoBancarioTest();
         ElencoTelefonicoTest();
         SeggioElettoraleTest();
+        HotelTest();
     }
 
     public static void PrenotazioniTest() throws Exception {
@@ -169,7 +173,7 @@ public class App {
         }
     }
 
-
+    // Pomeriggio 
 
  public static void SeggioElettoraleTest(){
     SeggioElettorale seggio = new SeggioElettorale();
@@ -197,4 +201,34 @@ public class App {
     seggio.stampaRisultati();
  }  
 
+ public static void HotelTest(){
+
+    FrontOffice hotel = new FrontOffice();
+
+    Camera camera = new Camera(1, "Singola");
+    Camera camera1 = new Camera(2, "Doppia");
+    Camera camera2 = new Camera(3, "Suite");
+
+    hotel.aggiungiCamera(camera);
+    hotel.aggiungiCamera(camera1);
+    hotel.aggiungiCamera(camera2);
+
+    Cliente cliente1 = new Cliente("Gino");
+    Cliente cliente2 = new Cliente("Luca");
+
+    try {
+        hotel.aggiungiPrenotazione(cliente1, camera, "2024-03-20", "2024-03-25");
+        hotel.aggiungiPrenotazione(cliente2, camera1, "2024-03-22", "2024-03-28");
+
+        hotel.stampaPrenotazioni();
+
+        Prenotazione prenotazioneCliente1 = new Prenotazione(camera1, cliente1, "2024-07-01", "2024-07-07");
+        
+
+    } catch (Exception e) {
+        e.getStackTrace();
+    }
+
+
+ }
 }
