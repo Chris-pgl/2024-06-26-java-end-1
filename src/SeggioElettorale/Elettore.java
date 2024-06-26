@@ -1,3 +1,4 @@
+package SeggioElettorale;
 public class Elettore {
         /*
  * ES5: Sistema di Votazione

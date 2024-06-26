@@ -1,3 +1,4 @@
+package SeggioElettorale;
 public class Candidato{
 
     /*

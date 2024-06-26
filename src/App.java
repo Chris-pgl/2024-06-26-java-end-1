@@ -1,3 +1,7 @@
+import SeggioElettorale.Candidato;
+import SeggioElettorale.Elettore;
+import SeggioElettorale.SeggioElettorale;
+
 /**
  * TODO:
  * 
