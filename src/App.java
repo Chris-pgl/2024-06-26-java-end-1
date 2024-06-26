@@ -49,6 +49,7 @@
 
         PrenotazioniTest();
         StudenteTest();
+        ContoBancarioTest();
     }
 
     public static void PrenotazioniTest() throws Exception {
@@ -64,12 +65,23 @@
         System.out.println("Verifica più posti disponibili: " + prenotazione.postiDisponibili(postiDaVerificare));
     }
 
-    public static void StudenteTest(){
+    public static void StudenteTest()throws Exception{
         Studente studente = new Studente("Mario", "1234");
         studente.addVoto(9);
         studente.addVoto(7);
         studente.addVoto(5);
         studente.addVoto(11); //stampa errore
         studente.stampaStudente();
+    }
+
+    public static void ContoBancarioTest()throws Exception{
+        ContoBancario contoBancario = new ContoBancario(1000);
+        System.out.println("Aperto un nuovo conto! saldo: " + contoBancario.getSaldo());
+        contoBancario.deposita(100);
+        System.out.println("Saldo dopo il deposito 100: " + contoBancario.getSaldo());
+        contoBancario.preleva(1000);
+        System.out.println("Prelevo 1000, saldo restante: " +contoBancario.getSaldo());
+        contoBancario.preleva(200);
+
     }
 }

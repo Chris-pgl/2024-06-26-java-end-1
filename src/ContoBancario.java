@@ -6,4 +6,41 @@ public class ContoBancario {
  * prelevare denaro e ottenere il saldo. Assicurati di gestire il caso in cui si
  * tenta di prelevare più denaro di quanto disponibile con un'eccezione.
  */ 
+
+    private double saldo;
+
+    public ContoBancario(double SaldoIniziale){
+        if(SaldoIniziale < 0){
+            throw new IllegalArgumentException("Saldo iniziale non può essere negativo");
+        }
+        this.saldo = SaldoIniziale;
+    }
+
+
+    //deposito denaro
+    public void deposita(double importo){
+        if(importo < 0){
+            throw new IllegalArgumentException("Importo non può essere negativo");
+            }
+            this.saldo += importo;
+    }
+
+    //metodo per prelevare denaro
+    public void preleva(double importo){
+        if(importo < 0){
+            throw new IllegalArgumentException("Importo non può essere negativo");
+        }
+        if(importo > saldo){
+            throw new IllegalArgumentException("Non ci sono abbastanza soldi");
+            }
+            this.saldo -= importo;
+    }
+
+    
+    //ottieni il saldo
+    public double getSaldo(){
+        return saldo;
+    }
 }
+
+
