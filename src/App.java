@@ -98,12 +98,13 @@
             ElencoTelefonico elenco = new ElencoTelefonico();
             Contatto contattoG = new Contatto("Gino Lino", "1234567890");
             Contatto contattoE = new Contatto("Elen", "2345781249");
-            Contatto ContattoM = new Contatto("Mario", "1246890348");
+            Contatto contattoM = new Contatto("Mario", "1246890348");
+           
        
 
             elenco.addContatto(contattoG);
             elenco.addContatto(contattoE);
-            elenco.addContatto(ContattoM);
+            elenco.addContatto(contattoM);
 
             System.out.println("Contatti: ");
             elenco.stampaRubrica();
@@ -116,6 +117,9 @@
             System.out.println("Rimozione dall'elento Mario");
             elenco.removeContatto("Mario");
             elenco.stampaRubrica();
+            System.out.println("Prova aggiunta contatto fasullo: ");
+            System.out.println("Aggiunta contatto VattelaPesca: " + new Contatto("vattelaPesca", "12345f5"));
+         
             
 
         }catch(Exception e){

@@ -33,9 +33,13 @@ public class Contatto {
         return nome;
     }
 
-    public Contatto(String nome, String numeroTelefono) {
+    public Contatto(String nome, String numeroTelefono) throws Exception {
+        if(isValidNum(numeroTelefono)){
         this.nome = nome;
         this.numeroTelefono = numeroTelefono;
+        }else{
+           throw new Exception("Numero di telefono non valido");
+        }
     }
 
     public void setNome(String nome) {
