@@ -1,3 +1,7 @@
+import Alberghiero.Albergo;
+import Alberghiero.CameraDoppia;
+import Alberghiero.CameraSingola;
+import Alberghiero.CameraSuites;
 import Azienda.Impiegato;
 import Azienda.Manager;
 import Hotel.Camera;
@@ -105,6 +109,7 @@ public class App {
         SeggioElettoraleTest();
         HotelTest();
         AziendaTest();
+        AlbergoTest();
     }
 
     public static void PrenotazioniTest() throws Exception {
@@ -256,4 +261,17 @@ public class App {
         e.getStackTrace();
     }
   }
+
+public static void AlbergoTest(){
+    
+    Albergo albero = new Albergo();
+
+    albero.aggiungiCamera(new CameraSingola(1));
+    albero.aggiungiCamera(new CameraDoppia());
+    albero.aggiungiCamera(new CameraSuites(false));
+    albero.aggiungiCamera(new CameraSuites(true));
+    albero.mostraCamere();
+    
+
+}
 }
