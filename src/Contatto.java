@@ -83,7 +83,7 @@ class ElencoTelefonico {
     //rimuovi contatto
     public void removeContatto(String nome) {
         for (Contatto c : contatti) {
-            if (c.getNome().equals(nome)) {
+            if (c.getNome().toLowerCase().equals(nome)) {
                 contatti.remove(c);
                 break;
             }
@@ -93,7 +93,7 @@ class ElencoTelefonico {
     //cerca contatto
     public Contatto cercaContatto(String nome) {
         for (Contatto c : contatti) {
-            if (c.getNome().equals(nome)) {
+            if (c.getNome().toLowerCase().equals(nome)) {
                 return c;
             }
         }
