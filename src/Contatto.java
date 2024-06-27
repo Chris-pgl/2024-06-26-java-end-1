@@ -75,12 +75,12 @@ class ElencoTelefonico {
         contatti = new ArrayList<>();
     }
 
-    //aggiungi contatto
+
     public void addContatto(Contatto contatto) {
         contatti.add(contatto);
     }
 
-    //rimuovi contatto
+  
     public void removeContatto(String nome) {
         for (Contatto c : contatti) {
             if (c.getNome().toLowerCase().equals(nome)) {
@@ -90,7 +90,7 @@ class ElencoTelefonico {
         }
     }
 
-    //cerca contatto
+
     public Contatto cercaContatto(String nome) {
         for (Contatto c : contatti) {
             if (c.getNome().toLowerCase().equals(nome)) {
@@ -100,7 +100,7 @@ class ElencoTelefonico {
         return null;
     }
 
-    //stampa rubrica
+  
     public void stampaRubrica() {
         for (Contatto c : contatti) {
             System.out.println(c);

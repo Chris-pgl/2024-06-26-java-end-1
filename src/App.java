@@ -130,7 +130,8 @@ public class App {
     public static void StudenteTest() throws Exception {
         Studente studente = new Studente("Mario", "1234");
         System.out.println("----- Studente ------");
-
+        System.out.println("Nome: " + studente.getName());
+        System.out.println("Voti:");
         studente.addVoto(9);
         studente.addVoto(7);
         studente.addVoto(5);
@@ -237,11 +238,11 @@ System.out.println("----- Conto Bancario ------");
     try {
         hotel.aggiungiPrenotazione(cliente1, camera, "2024-03-20", "2024-03-25");
         hotel.aggiungiPrenotazione(cliente2, camera1, "2024-03-22", "2024-03-28");
-
+        System.out.println("Stampa tutte le prenotazioni:");
         hotel.stampaPrenotazioni();
-        
         hotel.eliminaPrenotazione(cliente2);
-
+        System.out.println("Rimossa prenotazione a: " + cliente2.toString());
+        System.out.println("Stampa tutte le prenotazioni:");
         hotel.stampaPrenotazioni();
 
     } catch (Exception e) {

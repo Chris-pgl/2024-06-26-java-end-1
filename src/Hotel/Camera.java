@@ -29,5 +29,9 @@ public class Camera {
         return "Camera [numeroCamere=" + numeroCamere + "]";
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
    
 }

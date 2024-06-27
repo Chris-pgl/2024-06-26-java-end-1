@@ -7,13 +7,13 @@ import java.util.Set;
 
 public class SeggioElettorale {
     
-    private Map<Candidato, Integer> voti;
-    private Set<Elettore> elettori;
+    private final Map<Candidato, Integer> voti;
+    private final Set<Elettore> elettori;
 
 
     public SeggioElettorale(){
-        voti = new HashMap<Candidato, Integer>();
-        elettori = new HashSet<Elettore>();
+        voti = new HashMap<>();
+        elettori = new HashSet<>();
     }
 
     public void aggiungiCandidato(Candidato candidato){
@@ -39,6 +39,7 @@ public class SeggioElettorale {
         for(Map.Entry<Candidato, Integer> entry : voti.entrySet()){
             System.out.println(entry.getKey().getName() + ": " + entry.getValue() + " voti ricevuti");
         }
+        
     }
 
 

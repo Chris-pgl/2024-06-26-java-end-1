@@ -13,11 +13,12 @@ public class ContoBancario {
         if(SaldoIniziale < 0){
             throw new IllegalArgumentException("Saldo iniziale non può essere negativo");
         }
-        this.saldo = SaldoIniziale;
+        this.saldo = SaldoIniziale; 
+        
     }
 
 
-    //deposito denaro
+    
     public void deposita(double importo){
         if(importo < 0){
             throw new IllegalArgumentException("Importo non può essere negativo");
@@ -25,7 +26,7 @@ public class ContoBancario {
             this.saldo += importo;
     }
 
-    //metodo per prelevare denaro
+    
     public void preleva(double importo) throws Exception{
         if(importo < 0){
             throw new IllegalArgumentException("Importo non può essere negativo");
@@ -37,7 +38,7 @@ public class ContoBancario {
     }
 
     
-    //ottieni il saldo
+    
     public double getSaldo(){
         return saldo;
     }
