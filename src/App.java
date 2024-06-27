@@ -116,7 +116,7 @@ public class App {
 
         Prenotazione prenotazione = new Prenotazione(10);
         int[] postiDaVerificare = { 2, 5, 6, 7, 8 };
-
+        System.out.println("------- Prenotazioni ---------");
         System.out.println("Prenotazione posto 8: " + prenotazione.prenotaPosto(8));
         System.out.println("Prenotazione posto 5: " + prenotazione.prenotaPosto(5));
         System.out.println("Verifica disponibilità posto 5: " + prenotazione.isPostoDisponibile(5));
@@ -127,6 +127,8 @@ public class App {
 
     public static void StudenteTest() throws Exception {
         Studente studente = new Studente("Mario", "1234");
+        System.out.println("----- Studente ------");
+
         studente.addVoto(9);
         studente.addVoto(7);
         studente.addVoto(5);
@@ -135,7 +137,8 @@ public class App {
     }
 
     public static void ContoBancarioTest() throws Exception {
-
+       
+System.out.println("----- Conto Bancario ------");
         ContoBancario contoBancario = new ContoBancario(1000);
         System.out.println("Aperto un nuovo conto! saldo: " + contoBancario.getSaldo());
         contoBancario.deposita(100);
@@ -151,6 +154,8 @@ public class App {
 
     public static void ElencoTelefonicoTest() throws Exception {
 
+       
+        System.out.println("----- Elenco Telefonico ------");
         try {
 
             ElencoTelefonico elenco = new ElencoTelefonico();
@@ -185,6 +190,8 @@ public class App {
 
  public static void SeggioElettoraleTest(){
     SeggioElettorale seggio = new SeggioElettorale();
+   
+    System.out.println("----- Seggio Elettorale ------");
     
     Candidato candidato1 = new Candidato("Uffugo");
     Candidato candidato2 = new Candidato("Faragalli");
@@ -210,6 +217,7 @@ public class App {
  }  
 
  public static void HotelTest(){
+    System.out.println("----- Hotel ------");
 
     FrontOffice hotel = new FrontOffice();
 
@@ -244,6 +252,9 @@ public class App {
  }
 
  public static void AziendaTest(){
+
+    System.out.println("----- Azienda ------");
+
     Impiegato[] impiegati = new Impiegato[3];
     impiegati[0] = new Impiegato("Salvo", 30000);
     impiegati[1] = new Impiegato("Gino", 25000);
@@ -264,6 +275,7 @@ public class App {
 
 public static void AlbergoTest(){
     
+    System.out.println("----- Albergo ------");
     Albergo albero = new Albergo();
 
     albero.aggiungiCamera(new CameraSingola(1));
