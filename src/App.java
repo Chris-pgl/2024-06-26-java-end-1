@@ -117,9 +117,13 @@ public class App {
         Prenotazione prenotazione = new Prenotazione(10);
         int[] postiDaVerificare = { 2, 5, 6, 7, 8 };
         System.out.println("------- Prenotazioni ---------");
+        System.out.println("Verifica disponibilità posto 8: " + prenotazione.isPostoDisponibile(8));
+        System.out.println("Verifica disponibilità posto 5: " + prenotazione.isPostoDisponibile(5));
         System.out.println("Prenotazione posto 8: " + prenotazione.prenotaPosto(8));
         System.out.println("Prenotazione posto 5: " + prenotazione.prenotaPosto(5));
         System.out.println("Verifica disponibilità posto 5: " + prenotazione.isPostoDisponibile(5));
+        System.out.println("Verifica disponibilità posto 8: " + prenotazione.isPostoDisponibile(8));
+
         System.out.println("Annulla prenotazione posto 5: " + prenotazione.annullaPrenotazione(5));
         System.out.println("Verifica disponibilità posto 5: " + prenotazione.isPostoDisponibile(5));
         System.out.println("Verifica più posti disponibili: " + prenotazione.postiDisponibili(postiDaVerificare));
@@ -274,7 +278,7 @@ System.out.println("----- Conto Bancario ------");
   }
 
 public static void AlbergoTest(){
-    
+
     System.out.println("----- Albergo ------");
     Albergo albero = new Albergo();
 
