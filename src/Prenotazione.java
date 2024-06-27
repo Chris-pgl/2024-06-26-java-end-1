@@ -1,5 +1,3 @@
-import Hotel.Camera;
-import Hotel.Cliente;
 
 public class Prenotazione {
 
@@ -18,9 +16,6 @@ public class Prenotazione {
         this.posti = new boolean[numPosti];
     }
 
-    public Prenotazione(Camera camera1, Cliente cliente1, String string, String string2) {
-        //TODO Auto-generated constructor stub
-    }
 
     //prenota posto
     public boolean prenotaPosto(int posto) throws Exception{
